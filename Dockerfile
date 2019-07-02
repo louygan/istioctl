@@ -4,7 +4,7 @@ RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/reposito
     && echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk add --no-cache curl && rm -rf /var/run/apk/*
 
-ENV ISTIO_VERSION=1.0.0
+ENV ISTIO_VERSION=1.1.0
 WORKDIR /root
 RUN curl -L https://git.io/getLatestIstio | sh - && mv istio-$ISTIO_VERSION/bin/istioctl /bin && rm -rf istio-$ISTIO_VERSION
 ENTRYPOINT ["istioctl"]
